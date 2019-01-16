@@ -1,4 +1,4 @@
-package io.parseq.http4s
+package io.parseq.examples.http4s
 
 import java.util.concurrent.Executors
 
@@ -8,7 +8,7 @@ import org.http4s.client._
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutorService}
 import scala.concurrent.ExecutionContext.global
 
-object ex02_client {
+object ex02_client_blocking {
 
   implicit val cs: ContextShift[IO] = IO.contextShift(global)
   val blockingEC: ExecutionContextExecutorService = ExecutionContext.fromExecutorService(Executors.newFixedThreadPool(5))

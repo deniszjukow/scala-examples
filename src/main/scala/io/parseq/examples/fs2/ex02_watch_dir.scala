@@ -1,4 +1,4 @@
-package io.parseq.fs2
+package io.parseq.examples.fs2
 
 import java.nio.file.Paths
 import java.util.concurrent.Executors

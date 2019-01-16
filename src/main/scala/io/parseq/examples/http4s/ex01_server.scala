@@ -1,4 +1,4 @@
-package io.parseq.http4s
+package io.parseq.examples.http4s
 
 import cats.data.Kleisli
 import cats.effect._
