@@ -7,6 +7,7 @@ object mpilquist01_pure_streams {
 
     // create
     val s01: Stream[Pure, Int] = Stream(1, 2, 3)
+    // same as: val s01:Stream[Pure, Int] = Stream.emits(List(1, 2, 3))
     println(s01.toList)
 
     // map

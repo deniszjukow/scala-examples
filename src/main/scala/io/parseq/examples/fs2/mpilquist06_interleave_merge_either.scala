@@ -14,7 +14,7 @@ object mpilquist06_interleave_merge_either {
 
   def main(args: Array[String]): Unit = {
     val a = Stream.range(1, 10)
-      .through(mpilquist06_concurrent.randomDelays(1.second))
+      .through(randomDelays(1.second))
       .through(log("A"))
 
     val b = Stream.range(1, 10)

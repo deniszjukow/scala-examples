@@ -10,10 +10,7 @@ import scala.concurrent.duration._
 object mpilquist06_concurrent {
 
   def log[A](prefix: String): Pipe[IO, A, A] = _.evalMap { a =>
-    IO {
-      println(s"$prefix> $a")
-      a
-    }
+    IO { println(s"$prefix> $a"); a }
   }
 
   def randomDelays[A](maxDelay: FiniteDuration)(implicit timer: Timer[IO]): Pipe[IO, A, A] = _.evalMap { a =>

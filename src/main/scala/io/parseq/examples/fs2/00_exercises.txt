@@ -1,0 +1,57 @@
+1. input:
+     Stream(1, 2, 3)
+     Stream(4, 5, 6, 7, 8)
+
+   result:
+     Stream(1, 4, 2, 5, 3, 6)
+
+   see: mpilquist01_pure_streams (s04)
+
+2. input:
+     Stream(1, 2, 3)
+
+   result:
+     Stream(1, 0, 2, 0, 3)
+
+   see mpilquist01_pure_streams (s05)
+
+3. input:
+     Stream(1, 2, 3, 4, 5)
+
+   result:
+     Stream((1, 0), (2, 1), (3, 0), (4, 1), (5, 0))
+
+   see: mpilquist01_pure_streams (s06)
+
+4. Repeatedly print out current time in millies to stdout.
+   Limit output to the first 10 values.
+
+   see: mpilquist03_effectful_streams (s02)
+
+5. What is the output of:
+
+   println( (Stream(1, 2, 3) ++ Stream(4, 5, 6)).chunks.toList )
+
+   see: mpilquist04_chunks (s02)
+
+6. What is the output of:
+
+   println(Stream(1, 2, 3).repeat.take(10).chunks.toList)
+
+   see: mpilquist04_chunks (s03)
+
+7. Print out current time in millies with interval of 1 second to stdout for 5 seconds.
+
+   see: mpilquist05_time
+
+8. Implement a pipe that prints out stream elements to stdout.
+   The printed elements should have a prefix:
+
+   def log[A](prefix: String): Pipe[IO, A, A]
+
+   see: mpilquist06_concurrent
+
+9. Implement a pipe that delays output of a stream element by a random
+   period with interval 0..maxDelay
+
+   def randomDelays[A](maxDelay: FiniteDuration)(implicit ...): Pipe[IO, A, A]

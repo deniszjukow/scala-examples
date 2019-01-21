@@ -24,7 +24,7 @@ object mpilquist02_io {
     }
     println(io03.unsafeRunSync())
 
-    // async
+    // async (separate thread)
     val io04: IO[Long] = IO.async[Long]{ e =>
       println(Thread.currentThread())
       e.apply(Right(System.currentTimeMillis()))

@@ -1,7 +1,7 @@
 package io.parseq.examples.fs2
 
 import fs2._
-import cats.effect.{ContextShift, IO, Resource}
+import cats.effect.IO
 
 object mpilquist03_effectful_streams {
   def main(args: Array[String]): Unit = {
@@ -10,9 +10,11 @@ object mpilquist03_effectful_streams {
     }
 
     // eval
-    println(Stream.eval(io01).compile.toList.unsafeRunSync())
+    val s01 = Stream.eval(io01)
+    println(s01.compile.toList.unsafeRunSync())
 
     // repeatEval
-    println(Stream.repeatEval(io01).take(10).compile.toList.unsafeRunSync())
+    val s02 = Stream.repeatEval(io01).take(10)
+    println(s02.compile.toList.unsafeRunSync())
   }
 }
