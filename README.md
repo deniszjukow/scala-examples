@@ -32,13 +32,18 @@ function(Stream(1, 2, 3), 0) === Stream(1, 0, 2, 0, 3)
 see [mpilquist01_pure_streams (s05)](src/main/scala/io/parseq/examples/fs2/mpilquist01_pure_streams)
 
 ### 3. Zip stream with a repeated sequence of elements (0, 1):
-#### input:
 ```
-Stream(1, 2, 3, 4, 5)
-```
-#### result:
-```
-Stream((1, 0), (2, 1), (3, 0), (4, 1), (5, 0))
+def function[A](stream: Stream[Pure, A], sequence: Seq[A]): Stream[Pure, A]
+
+function(
+  Stream(11, 22, 33, 44, 55, 66, 77),
+  Seq(0, 1))  === Stream( (11, 0),
+                          (22, 1),
+                          (33, 0),
+                          (44, 1),
+                          (55, 0),
+                          (66, 1),
+                          (77, 0) )
 ```
 see [mpilquist01_pure_streams (s06)](src/main/scala/io/parseq/examples/fs2/mpilquist01_pure_streams)
 
