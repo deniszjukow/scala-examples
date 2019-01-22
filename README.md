@@ -13,25 +13,21 @@ libraryDependencies += "org.typelevel" %% "cats-effect" % "1.1.0"
 # fs2 exercises:
 
 ### 1. "Mix" two streams:
-#### input:
 ```
-Stream(1, 2, 3)
-Stream(4, 5, 6, 7, 8)
-```
-#### result:
-```
-Stream(1, 4, 2, 5, 3, 6)
+def function[A](a: Stream[Pure, A], b: Stream[Pure, A]): Stream[Pure, A] = ???
+
+function(
+  Stream(1, 2, 3),
+  Stream(4, 5, 6, 7, 8)
+) === Stream(1, 4, 2, 5, 3, 6)
 ```
 see [mpilquist01_pure_streams (s04)](src/main/scala/io/parseq/examples/fs2/mpilquist01_pure_streams.scala)
 
-### 2. Separate stream elements with 0:
-#### input:
+### 2. Delimit stream elements:
 ```
-Stream(1, 2, 3)
-```
-#### result:
-```
-Stream(1, 0, 2, 0, 3)
+def function[A](a: Stream[Pure, A], delimiter: A): Stream[Pure, A] = ???
+
+function(Stream(1, 2, 3), 0) === Stream(1, 0, 2, 0, 3)
 ```
 see [mpilquist01_pure_streams (s05)](src/main/scala/io/parseq/examples/fs2/mpilquist01_pure_streams)
 
