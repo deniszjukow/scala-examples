@@ -37,13 +37,14 @@ def function[A](stream: Stream[Pure, A], sequence: Seq[A]): Stream[Pure, A]
 
 function(
   Stream(11, 22, 33, 44, 55, 66, 77),
-  Seq(0, 1))  === Stream( (11, 0),
-                          (22, 1),
-                          (33, 0),
-                          (44, 1),
-                          (55, 0),
-                          (66, 1),
-                          (77, 0) )
+  Seq(0, 1)
+) === Stream( (11, 0),
+              (22, 1),
+              (33, 0),
+              (44, 1),
+              (55, 0),
+              (66, 1),
+              (77, 0) )
 ```
 see [mpilquist01_pure_streams (s06)](src/main/scala/io/parseq/examples/fs2/mpilquist01_pure_streams)
 
