@@ -2,6 +2,7 @@ The exercises are based on these youtube video tutorials created by @mpilquist:
 - https://www.youtube.com/watch?v=cahvyadYfX8&index=2&list=PLFrwDVdSrYE6PVD_p6YQLAbNaEHagx9bW&t=0s
 - https://www.youtube.com/watch?v=HM0mOu5o2uA&index=3&list=PLFrwDVdSrYE6PVD_p6YQLAbNaEHagx9bW&t=0s
 - https://www.youtube.com/watch?v=8YxcB6PIUDg&index=4&list=PLFrwDVdSrYE6PVD_p6YQLAbNaEHagx9bW&t=0s
+
 The code uses the following fs2 and cats versions:
 ```
 libraryDependencies += "co.fs2" %% "fs2-core" % "1.0.1"
