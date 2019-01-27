@@ -6,10 +6,10 @@ import fs2.concurrent.Queue
 
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
 import scala.concurrent.duration._
-import mpilquist06_concurrent._
+import ex08_concurrent._
 
 
-object playground_queue {
+object ex14_playground_queue {
 
   implicit val ec: ExecutionContextExecutor = ExecutionContext.global
   implicit val tm: Timer[IO] = IO.timer(ec)

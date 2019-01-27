@@ -3,7 +3,7 @@ package io.parseq.examples.fs2
 import fs2._
 import cats.effect.IO
 
-object mpilquist03_effectful_streams {
+object ex05_effectful_streams {
   def main(args: Array[String]): Unit = {
     val io01: IO[Long] = IO {
       System.currentTimeMillis()

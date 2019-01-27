@@ -5,9 +5,9 @@ import fs2._
 
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext
-import mpilquist06_concurrent._
+import ex08_concurrent._
 
-object mpilquist06_interleave_merge_either {
+object ex09_interleave_merge_either {
 
   implicit val timer: Timer[IO] = IO.timer(ExecutionContext.global)
   private implicit val cs: ContextShift[IO] = IO.contextShift(ExecutionContext.global)

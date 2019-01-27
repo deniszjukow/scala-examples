@@ -9,7 +9,7 @@ import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
 import scala.language.higherKinds
 
 
-object playground_topic {
+object ex15_playground_topic {
 
   sealed trait Event
 

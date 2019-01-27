@@ -2,7 +2,7 @@ package io.parseq.examples.fs2
 
 import fs2._
 
-object mpilquist01_pure_streams {
+object ex03_pure_streams {
   def main(args: Array[String]): Unit = {
 
     // create

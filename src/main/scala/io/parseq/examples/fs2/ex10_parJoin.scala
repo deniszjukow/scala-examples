@@ -2,12 +2,12 @@ package io.parseq.examples.fs2
 
 import cats.effect.{ContextShift, IO, Timer}
 import fs2._
-import _root_.io.parseq.examples.fs2.mpilquist06_concurrent._
+import _root_.io.parseq.examples.fs2.ex08_concurrent._
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration._
 
-object mpilquist07_parJoin {
+object ex10_parJoin {
 
   private implicit val timer: Timer[IO] = IO.timer(ExecutionContext.global)
   private implicit val cs: ContextShift[IO] = IO.contextShift(ExecutionContext.global)

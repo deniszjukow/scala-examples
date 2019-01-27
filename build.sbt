@@ -8,7 +8,13 @@ resolvers += Resolver.sonatypeRepo("snapshots")
 
 val http4sVersion = "0.20.0-M5"
 
-scalacOptions += "-Ypartial-unification"
+scalacOptions ++= Seq(
+  "-feature",
+  "-deprecation",
+  "-unchecked",
+  "-language:postfixOps",
+  "-language:higherKinds",
+  "-Ypartial-unification")
 
 libraryDependencies += "co.fs2" %% "fs2-core" % "1.0.1"
 libraryDependencies += "co.fs2" %% "fs2-io" % "1.0.2"

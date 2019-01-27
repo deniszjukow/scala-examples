@@ -2,11 +2,11 @@ package io.parseq.examples.fs2
 
 import cats.effect.{ContextShift, IO}
 import fs2.concurrent.SignallingRef
-import mpilquist06_concurrent._
+import ex08_concurrent._
 
 import scala.concurrent.ExecutionContext
 
-object mpilquist08_signal_unsafe {
+object ex11_signal_unsafe {
 
   implicit val cs: ContextShift[IO] = IO.contextShift(ExecutionContext.global)
 

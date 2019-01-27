@@ -1,6 +1,6 @@
 package io.parseq.examples.fs2
 
-import _root_.io.parseq.examples.fs2.mpilquist06_concurrent._
+import _root_.io.parseq.examples.fs2.ex08_concurrent._
 import cats.effect.{ContextShift, IO, Timer}
 import fs2._
 import fs2.concurrent.Queue
@@ -8,7 +8,7 @@ import fs2.concurrent.Queue
 import scala.concurrent.duration._
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
 
-object mpilquist10_queue {
+object ex13_queue {
 
   implicit val ec: ExecutionContextExecutor = ExecutionContext.global
   implicit val cs: ContextShift[IO] = IO.contextShift(ec)

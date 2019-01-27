@@ -21,7 +21,7 @@ function(
   Stream(4, 5, 6, 7, 8)
 ) === Stream(1, 4, 2, 5, 3, 6)
 ```
-see [mpilquist01_pure_streams (s04)](src/main/scala/io/parseq/examples/fs2/mpilquist01_pure_streams.scala)
+see [mpilquist01_pure_streams (s04)](src/main/scala/io/parseq/examples/fs2/ex03_pure_streams.scala)
 
 ### 2. Delimit stream elements:
 ```
@@ -29,7 +29,7 @@ def function[A](a: Stream[Pure, A], delimiter: A): Stream[Pure, A] = ???
 
 function(Stream(1, 2, 3), 0) === Stream(1, 0, 2, 0, 3)
 ```
-see [mpilquist01_pure_streams (s05)](src/main/scala/io/parseq/examples/fs2/mpilquist01_pure_streams.scala)
+see [mpilquist01_pure_streams (s05)](src/main/scala/io/parseq/examples/fs2/ex03_pure_streams.scala)
 
 ### 3. Zip stream with a repeated sequence of elements (0, 1):
 ```
@@ -46,34 +46,34 @@ function(
               (66, 1),
               (77, 0) )
 ```
-see [mpilquist01_pure_streams (s06)](src/main/scala/io/parseq/examples/fs2/mpilquist01_pure_streams.scala)
+see [mpilquist01_pure_streams (s06)](src/main/scala/io/parseq/examples/fs2/ex03_pure_streams.scala)
 
 ### 4. Repeatedly print out current time in millies to stdout. Limit output to the first 10 values.
-see [mpilquist03_effectful_streams (s02)](src/main/scala/io/parseq/examples/fs2/mpilquist03_effectful_streams.scala)
+see [mpilquist03_effectful_streams (s02)](src/main/scala/io/parseq/examples/fs2/ex05_effectful_streams.scala)
 
 ### 5. What is the output of:
 ```
 println( (Stream(1, 2, 3) ++ Stream(4, 5, 6)).chunks.toList )
 ```
-see [mpilquist04_chunks (s02)](src/main/scala/io/parseq/examples/fs2/mpilquist04_chunks.scala)
+see [mpilquist04_chunks (s02)](src/main/scala/io/parseq/examples/fs2/ex06_chunks.scala)
 
 ### 6. What is the output of:
 ```
 println(Stream(1, 2, 3).repeat.take(10).chunks.toList)
 ```
-see [mpilquist04_chunks (s03)](src/main/scala/io/parseq/examples/fs2/mpilquist04_chunks.scala)
+see [mpilquist04_chunks (s03)](src/main/scala/io/parseq/examples/fs2/ex06_chunks.scala)
 
 ### 7. Print out current time in millies with interval of 1 second to stdout for 5 seconds.
-see [mpilquist05_time](src/main/scala/io/parseq/examples/fs2/mpilquist05_time.scala)
+see [mpilquist05_time](src/main/scala/io/parseq/examples/fs2/ex07_time.scala)
 
 ### 8. Implement a pipe that prints out stream elements to stdout. The printed elements should have a prefix:
 ```
 def log[A](prefix: String): Pipe[IO, A, A]
 ```
-see [mpilquist06_concurrent (log)](src/main/scala/io/parseq/examples/fs2/mpilquist06_concurrent.scala)
+see [mpilquist06_concurrent (log)](src/main/scala/io/parseq/examples/fs2/ex08_concurrent.scala)
 
 ### 9. Implement a pipe that delays output of a stream element with interval [0 .. maxDelay):
 ```
 def randomDelays[A](maxDelay: FiniteDuration)(implicit ...): Pipe[IO, A, A]
 ```
-see [mpilquist06_concurrent (randomDelays)](src/main/scala/io/parseq/examples/fs2/mpilquist06_concurrent.scala)
+see [mpilquist06_concurrent (randomDelays)](src/main/scala/io/parseq/examples/fs2/ex08_concurrent.scala)

@@ -8,7 +8,7 @@ import scala.util.Random
 import scala.concurrent.duration._
 import scala.language.higherKinds
 
-object mpilquist06_concurrent {
+object ex08_concurrent {
 
   def log[F[_], A](prefix: String)(implicit F: Concurrent[F]): Pipe[F, A, A] = _.evalMap { a =>
     F.delay { println(s"$prefix> $a"); a }

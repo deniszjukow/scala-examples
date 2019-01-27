@@ -4,7 +4,7 @@ import cats.effect.{ContextShift, IO}
 
 import scala.concurrent.ExecutionContext
 
-object mpilquist02_io {
+object ex04_io {
   def main(args: Array[String]): Unit = {
 
     // pure

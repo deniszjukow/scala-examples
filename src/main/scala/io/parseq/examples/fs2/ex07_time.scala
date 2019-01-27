@@ -6,7 +6,7 @@ import fs2._
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration._
 
-object mpilquist05_time {
+object ex07_time {
 
   implicit val timer: Timer[IO] = IO.timer(ExecutionContext.global)
   private implicit val cs: ContextShift[IO] = IO.contextShift(ExecutionContext.global)

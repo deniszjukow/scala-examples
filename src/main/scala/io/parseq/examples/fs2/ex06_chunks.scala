@@ -2,7 +2,7 @@ package io.parseq.examples.fs2
 
 import fs2._
 
-object mpilquist04_chunks {
+object ex06_chunks {
   def main(args: Array[String]): Unit = {
     // chunks
     val s01: Stream[Pure, Chunk[Int]] = Stream(1, 2, 3).chunks
