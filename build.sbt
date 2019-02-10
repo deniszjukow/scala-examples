@@ -25,3 +25,9 @@ libraryDependencies += "org.typelevel" %% "cats-effect" % "1.1.0"
 libraryDependencies += "org.http4s" %% "http4s-dsl" % http4sVersion
 libraryDependencies += "org.http4s" %% "http4s-blaze-server" % http4sVersion
 libraryDependencies += "org.http4s" %% "http4s-blaze-client" % http4sVersion
+
+libraryDependencies += "org.http4s" %% "http4s-circe" % http4sVersion
+libraryDependencies += "io.circe" %% "circe-generic" % "0.11.1"
+libraryDependencies += "io.circe" %% "circe-literal" % "0.11.1"
+
+libraryDependencies += "org.slf4j" % "slf4j-simple" % "1.7.25"

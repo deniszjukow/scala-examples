@@ -1,6 +1,7 @@
 package io.parseq.examples.fs2
 
 import cats.effect.{ContextShift, IO}
+import cats.implicits._
 
 import scala.concurrent.ExecutionContext
 
@@ -24,11 +25,20 @@ object ex04_io {
     }
     println(io03.unsafeRunSync())
 
-    // async (separate thread)
-    val io04: IO[Long] = IO.async[Long]{ e =>
+    // async ("surprisingly", still the same thread!!!)
+    val io04: IO[Long] = IO.async[Long]{ cb =>
       println(Thread.currentThread())
-      e.apply(Right(System.currentTimeMillis()))
+      cb(Right(System.currentTimeMillis()))
     }
     println("io04: " + io04.unsafeRunSync())
+
+    implicit val cs: ContextShift[IO] = IO.contextShift(ExecutionContext.global)
+
+    // shift (separate thread)
+    val io05: IO[Long] = IO.shift *> IO {
+      println(Thread.currentThread())
+      System.currentTimeMillis()
+    }
+    println("io05: " + io05.unsafeRunSync())
   }
 }
