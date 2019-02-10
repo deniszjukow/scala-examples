@@ -9,7 +9,6 @@ import cats.implicits._
 import scala.concurrent.duration._
 import io.circe.generic.auto._
 import io.parseq.examples.http4s.ex05._
-import io.parseq.examples.http4s.ex05_protocol.{HashReq, HashResp}
 import org.http4s.circe.CirceEntityDecoder._
 import org.http4s.circe.CirceEntityEncoder._
 import org.http4s.dsl.io._

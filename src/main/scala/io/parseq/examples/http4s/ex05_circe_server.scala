@@ -1,17 +1,5 @@
 package io.parseq.examples.http4s
 
-import io.circe.syntax._
-import org.http4s.dsl.io._
-import org.http4s._
-import org.http4s.client.dsl.io._
-import org.http4s.client.blaze._
-import cats.effect.{ExitCode, IO, IOApp}
-import io.circe.generic.auto._
-import org.http4s.circe._
-import cats.implicits._
-import io.parseq.examples.http4s.ex05_protocol.User
-
-
 import cats.data.Kleisli
 import cats.effect.{ExitCode, IOApp}
 import cats.implicits._
@@ -23,7 +11,7 @@ import org.http4s.{HttpRoutes, Request, Response}
 import org.http4s.implicits._
 import cats.effect.IO
 import io.circe.generic.auto._
-import io.parseq.examples.http4s.ex05_protocol.{Hello, User}
+import io.parseq.examples.http4s.ex05.{Hello, User}
 
 object ex05_circe_server extends IOApp {
 

@@ -22,8 +22,8 @@ object ex09_interleave_merge_either {
       .through(log("B"))
 
     //    val r = (a interleave b).through(log("interleaved"))
-    //    val r = (a merge b).through(log("merged"))
-    val r = (a either b).through(log("either"))
+        val r = (a merge b).through(log("merged"))
+    //    val r = (a either b).through(log("either"))
 
     r.compile.toList.unsafeRunSync()
   }
