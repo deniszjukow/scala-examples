@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8" />
-<title>WebSocket Test</title>
+<title>Simple Chat</title>
 <script language="javascript" type="text/javascript">
 
     var user = "u1";
@@ -61,14 +61,16 @@
 
 </script>
 
-<h2>WebSocket Test</h2>
+<h2>Simple Chat</h2>
 <label for="user">User</label>
 <input id="user" type="text" class="text-line" />
 <button onclick="connect()">Connect</button>
 <br/>
+<br/>
 
 <label for="text">Text</label>
-<textarea id="text"></textarea>
+<input id="text" type="text" class="text-line" />
+<br/>
 <br/>
 
 <button onclick="doSend(document.getElementById('text').value)">Send</button>
