@@ -20,11 +20,35 @@ object Chat extends IOApp {
   }.flatMap(y => y.stream.compile.drain.as(ExitCode.Success))
 }
 
+case class Channel[F[_]](left: Queue[F, WebSocketFrame], right: Queue[F, WebSocketFrame]) {
+  def flip: Channel[F] = Channel[F](right, left)
+}
+
 class ChatApp[F[_]](q1: Queue[F, WebSocketFrame], q2: Queue[F, WebSocketFrame])(implicit F: ConcurrentEffect[F], timer: Timer[F]) extends Http4sDsl[F] {
 
+  var ch: Channel[F] = _
+
+  val channel: F[Channel[F]] = F.defer[Channel[F]] {
+    synchronized {
+      if (ch == null) {
+        for {
+          x <- Queue.unbounded[F, WebSocketFrame]
+          y <- Queue.unbounded[F, WebSocketFrame]
+          channel = Channel(x, y)
+        } yield F.pure(channel)
+      } else {
+        val c = ch
+        ch = null
+        F.pure(c.flip)
+      }
+    }
+  }
+
   def routes: HttpRoutes[F] = HttpRoutes.of[F] {
-    case GET -> Root / "u1" => WebSocketBuilder[F].build(q1.dequeue, q2.enqueue)
-    case GET -> Root / "u2" => WebSocketBuilder[F].build(q2.dequeue, q1.enqueue)
+    case GET -> Root / name => for {
+      ch <- channel
+      ws <- WebSocketBuilder[F].build(ch.left.dequeue, ch.right.enqueue)
+    } yield ws
   }
 
   def stream: Stream[F, ExitCode] =
